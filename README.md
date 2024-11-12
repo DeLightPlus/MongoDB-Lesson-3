@@ -92,17 +92,26 @@ The **Library Management System** allows managing a collection of books, authors
 
           db.Books.find()
 
+      ![find-all-books](https://github.com/user-attachments/assets/79a5e1c8-e621-4031-93fd-a5f7a3f75bfb)
+
     - **Find a Specific Book By Title**
 
           db.Books.find({title:"To Kill a Mockingbird"})
+
+      ![find-book-by-title](https://github.com/user-attachments/assets/09f107fa-018d-431f-ba20-176480f71a29)
 
     - **Find All Books by a Specific Author (using author_id)
 
           db.Books.find({ author_id: 5 })
 
+      ![find-book-by-id](https://github.com/user-attachments/assets/5d965454-dc01-4a90-983e-35c754e388bb)
+
     - **Find All Available Books**
 
           db.Books.find({ available: true })
+
+      ![find-all-available-books](https://github.com/user-attachments/assets/37c02f95-1f6c-430f-8021-11080a0d70fc)
+
     
   * #### **Update Operations**
     - **Update Book Availability**
