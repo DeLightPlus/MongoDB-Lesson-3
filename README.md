@@ -80,8 +80,7 @@ The **Library Management System** allows managing a collection of books, authors
       { _id: 8, name: "Hank Wilson", email: "hank@example.com", borrowed_books: [6] },
       { _id: 9, name: "Ivy Taylor", email: "ivy@example.com", borrowed_books: [] },
       { _id: 10, name: "Jack Anderson", email: "jack@example.com", borrowed_books: [7, 8] }
-    ])
-    
+    ])    
   
   ![insert-patrons](https://github.com/user-attachments/assets/7d544e0d-5ea0-4644-995b-08a62f606210)
 #
@@ -161,26 +160,46 @@ The **Library Management System** allows managing a collection of books, authors
     
         db.Books.find({ published_year: { $gt: 1950 } })
 
+    ![find-all-books-published-1950](https://github.com/user-attachments/assets/adcf81a2-a66a-4460-8b1e-a5ee4a115350)
+
   * **Find All American Authors**
 
         db.Authors.find({ nationality: "American" })
 
+    ![find-all-American-Authors](https://github.com/user-attachments/assets/8046f9f6-9176-4df9-ad3c-093b006822dc)
+  
   * **Set All Books to Available**
 
         db.Books.updateMany({}, { $set: { available: true } })
 
+    ![find-all-available-books](https://github.com/user-attachments/assets/5d9c3d82-b277-476e-a9d0-b88ee0e432da)
+  
   * **Find All Books That Are Available and Published After 1950**
 
         db.Books.find({ available: true, published_year: { $gt: 1950 } })
 
+    ![find-all-available-books-published-after-1950](https://github.com/user-attachments/assets/be3bce23-c3ae-4249-abdb-b51bc658744a)
+  
   * **Find Authors Whose Names Contain "George"**
 
         db.Authors.find({ name: { $regex: "George", $options: "i" } })
+
+    ![find-authors-whose-name-contains-'Goerge'](https://github.com/user-attachments/assets/f278838f-d8cd-4ddd-8ee7-765451d07a75)
 
   * **Increment the Published Year of Books Published in 1869 by 1**
 
         db.Books.updateMany({ published_year: 1869 }, { $inc: { published_year: 1 } })
 
+    ![incr-published-year-by-1](https://github.com/user-attachments/assets/14ac5708-0ee7-4ef2-9b8f-c0c76cad76e2)
 
 #
+  ### Conclusion
 
+  In this README, you learned how to:  
+  1. Install MongoDB and access the MongoDB shell.
+  2. Create a LibraryDB database and collections (Books, Authors, Patrons).
+  3. Insert multiple documents into collections using insertMany.
+  4. Perform CRUD operations such as reading, updating, and deleting documents.
+  5. Utilize advanced queries with operators like $gt, $eq, $inc, $set, and $regex.
+
+For more details, refer to the MongoDB documentation.
