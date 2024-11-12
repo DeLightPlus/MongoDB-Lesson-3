@@ -13,8 +13,7 @@ The **Library Management System** allows managing a collection of books, authors
   #### Access MongoDB shell
   Open a new command prompt window and run:
   
-      mongosh
-  
+      mongosh  
   
 
   #### **1. Create Database and Collections**
@@ -100,7 +99,7 @@ The **Library Management System** allows managing a collection of books, authors
 
       ![find-book-by-title](https://github.com/user-attachments/assets/09f107fa-018d-431f-ba20-176480f71a29)
 
-    - **Find All Books by a Specific Author (using author_id)
+    - **Find All Books by a Specific Author (using author_id)**
 
           db.Books.find({ author_id: 5 })
 
@@ -119,10 +118,15 @@ The **Library Management System** allows managing a collection of books, authors
 
           db.Books.updateOne({ _id: 3 }, { $set: { available: false } })
 
+      ![update-book-by-id](https://github.com/user-attachments/assets/26a2db03-3ed0-4467-8da3-11ebc9f82fa0)
+
     - **Add a Genre to a Book**
       To add a new genre to the book with ***_id: 8***:
 
           db.Books.updateOne({ _id: 8 }, { $addToSet: { genres: "True Story" } })
+
+      ![update_add-book-new-genre-by-id](https://github.com/user-attachments/assets/6dd7a99d-f4ca-43d8-98d2-739bd577504c)
+
 
   * #### **Delete Operations**
     - **Delete a Book by Title**
@@ -130,10 +134,14 @@ The **Library Management System** allows managing a collection of books, authors
           
           db.Books.deleteOne({ title: "Brave New World" })
 
+      ![delete-book-by-title](https://github.com/user-attachments/assets/111875ad-3be0-406b-bb52-15d39d9dff7e)
+
     - **Delete an Author**
       To delete the author with ***_id: 3***
 
           db.Authors.deleteOne({ _id: 3 })
+
+      ![delete-author-by-id](https://github.com/user-attachments/assets/4c357872-03f8-4cf4-ab18-6541d0c42e14)
 
 #
 
