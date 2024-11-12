@@ -124,6 +124,17 @@ The **Library Management System** allows managing a collection of books, authors
 
           db.Books.updateOne({ _id: 8 }, { $addToSet: { genres: "True Story" } })
 
+  * #### **Delete Operations**
+    - **Delete a Book by Title**
+      To delete a book titled "Brave New World":
+          
+          db.Books.deleteOne({ title: "Brave New World" })
 
-        
+    - **Delete an Author**
+      To delete the author with ***_id: 3***
+
+          db.Authors.deleteOne({ _id: 3 })
+
+#
+
     
