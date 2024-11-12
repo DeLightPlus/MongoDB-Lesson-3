@@ -163,4 +163,24 @@ The **Library Management System** allows managing a collection of books, authors
 
   * **Find All American Authors**
 
-    
+        db.Authors.find({ nationality: "American" })
+
+  * **Set All Books to Available**
+
+        db.Books.updateMany({}, { $set: { available: true } })
+
+  * **Find All Books That Are Available and Published After 1950**
+
+        db.Books.find({ available: true, published_year: { $gt: 1950 } })
+
+  * **Find Authors Whose Names Contain "George"**
+
+        db.Authors.find({ name: { $regex: "George", $options: "i" } })
+
+  * **Increment the Published Year of Books Published in 1869 by 1**
+
+        db.Books.updateMany({ published_year: 1869 }, { $inc: { published_year: 1 } })
+
+
+#
+
