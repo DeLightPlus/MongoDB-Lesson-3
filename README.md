@@ -87,6 +87,7 @@ The **Library Management System** allows managing a collection of books, authors
 #
   ### **3. CRUD Operations**
   * #### **Read Operations**
+    
     - **Find All Books**
 
           db.Books.find()
@@ -114,6 +115,7 @@ The **Library Management System** allows managing a collection of books, authors
     
   * #### **Update Operations**
     - **Update Book Availability**
+    - 
       To mark the book with ***_id: 3*** (The Great Gatsby) as borrowed:
 
           db.Books.updateOne({ _id: 3 }, { $set: { available: false } })
@@ -121,15 +123,24 @@ The **Library Management System** allows managing a collection of books, authors
       ![update-book-by-id](https://github.com/user-attachments/assets/26a2db03-3ed0-4467-8da3-11ebc9f82fa0)
 
     - **Add a Genre to a Book**
+      
       To add a new genre to the book with ***_id: 8***:
 
           db.Books.updateOne({ _id: 8 }, { $addToSet: { genres: "True Story" } })
 
       ![update_add-book-new-genre-by-id](https://github.com/user-attachments/assets/6dd7a99d-f4ca-43d8-98d2-739bd577504c)
 
+    - **Add a Borrowed Book to a Patron’s Record**
+   
+      To add the book with ***_id: 5*** (The Catcher in the Rye) to Patron 5's borrowed books:
+
+          db.Patrons.updateOne({ _id: 5 }, { $push: { borrowed_books: 5 } })
+
+      ![add-borrowed-book-to-patrons](https://github.com/user-attachments/assets/6babf0ef-5d0c-43d3-9704-aa9359e71a79)
 
   * #### **Delete Operations**
     - **Delete a Book by Title**
+      
       To delete a book titled "Brave New World":
           
           db.Books.deleteOne({ title: "Brave New World" })
@@ -137,6 +148,7 @@ The **Library Management System** allows managing a collection of books, authors
       ![delete-book-by-title](https://github.com/user-attachments/assets/111875ad-3be0-406b-bb52-15d39d9dff7e)
 
     - **Delete an Author**
+      
       To delete the author with ***_id: 3***
 
           db.Authors.deleteOne({ _id: 3 })
@@ -144,5 +156,11 @@ The **Library Management System** allows managing a collection of books, authors
       ![delete-author-by-id](https://github.com/user-attachments/assets/4c357872-03f8-4cf4-ab18-6541d0c42e14)
 
 #
+  ### **4. Advanced Queries with Operators**
+  * **Find Books Published After 1950**
+    
+        db.Books.find({ published_year: { $gt: 1950 } })
+
+  * **Find All American Authors**
 
     
