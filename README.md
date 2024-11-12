@@ -88,23 +88,33 @@ The **Library Management System** allows managing a collection of books, authors
 #
   ### **3. CRUD Operations**
   * #### **Read Operations**
-    **Find All Books***
+    - **Find All Books**
 
-        db.Books.find()
+          db.Books.find()
 
-    **Find a Specific Book By Title**
+    - **Find a Specific Book By Title**
 
-        db.Books.find({title:"To Kill a Mockingbird"})
+          db.Books.find({title:"To Kill a Mockingbird"})
 
-    **Find All Books by a Specific Author (using author_id)
+    - **Find All Books by a Specific Author (using author_id)
 
-        db.Books.find({ author_id: 5 })
+          db.Books.find({ author_id: 5 })
 
-    **Find All Available Books**
+    - **Find All Available Books**
 
-        db.Books.find({ available: true })
+          db.Books.find({ available: true })
     
-  * #### ** Update Operations**
-    **Update Book Availability**
+  * #### **Update Operations**
+    - **Update Book Availability**
+      To mark the book with ***_id: 3*** (The Great Gatsby) as borrowed:
 
+          db.Books.updateOne({ _id: 3 }, { $set: { available: false } })
+
+    - **Add a Genre to a Book**
+      To add a new genre to the book with ***_id: 8***:
+
+          db.Books.updateOne({ _id: 8 }, { $addToSet: { genres: "True Story" } })
+
+
+        
     
