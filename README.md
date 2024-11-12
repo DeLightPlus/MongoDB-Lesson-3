@@ -14,12 +14,15 @@ The **Library Management System** allows managing a collection of books, authors
   Open a new command prompt window and run:
   
       mongosh
+  
+  
 
   #### **1. Create Database and Collections**
   In the MongoDB shell, you can create the LibraryDB database by using the use command:
 
     use LibraryDB
   
+   ![mongosh-use-LibraryDB](https://github.com/user-attachments/assets/438528ae-5934-4f26-8b14-63d2d855ea4e)
   This command switches to the LibraryDB database, creating it if it doesn’t already exist.
 #
   #### **2. Create Collections and Insert Documents**
@@ -40,6 +43,9 @@ The **Library Management System** allows managing a collection of books, authors
       { _id: 10, title: "The Hobbit", author_id: 10, genres: ["Fantasy"], published_year: 1937, available: true }
     ])
 
+  ![insert-books](https://github.com/user-attachments/assets/60397860-04fa-4572-90a8-ba32b1c17c63)
+
+
 **Authors Collection**
 
 insert multiple documents into the **Authors** collection:
@@ -56,6 +62,10 @@ insert multiple documents into the **Authors** collection:
       { _id: 9, name: "Fyodor Dostoevsky", nationality: "Russian", birth_year: 1821, death_year: 1881 },
       { _id: 10, name: "J.R.R. Tolkien", nationality: "British", birth_year: 1892, death_year: 1973 }
     ])
+
+  ![insert-authors](https://github.com/user-attachments/assets/c0e5908c-51a4-4a62-a35c-eaa04e195c14)
+
+
 **Patrons Collection**
 
 finally, insert documents into the Patrons collection:
@@ -72,4 +82,6 @@ finally, insert documents into the Patrons collection:
       { _id: 9, name: "Ivy Taylor", email: "ivy@example.com", borrowed_books: [] },
       { _id: 10, name: "Jack Anderson", email: "jack@example.com", borrowed_books: [7, 8] }
     ])
+
+  ![insert-patrons](https://github.com/user-attachments/assets/7d544e0d-5ea0-4644-995b-08a62f606210)
 #
