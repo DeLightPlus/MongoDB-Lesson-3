@@ -46,9 +46,9 @@ The **Library Management System** allows managing a collection of books, authors
   ![insert-books](https://github.com/user-attachments/assets/60397860-04fa-4572-90a8-ba32b1c17c63)
 
 
-**Authors Collection**
+  **Authors Collection**
 
-insert multiple documents into the **Authors** collection:
+  insert multiple documents into the **Authors** collection:
 
     db.Authors.insertMany([
       { _id: 1, name: "George Orwell", nationality: "British", birth_year: 1903, death_year: 1950 },
@@ -66,9 +66,9 @@ insert multiple documents into the **Authors** collection:
   ![insert-authors](https://github.com/user-attachments/assets/c0e5908c-51a4-4a62-a35c-eaa04e195c14)
 
 
-**Patrons Collection**
+  **Patrons Collection**
 
-finally, insert documents into the Patrons collection:
+  finally, insert documents into the Patrons collection:
 
     db.Patrons.insertMany([
       { _id: 1, name: "Alice Johnson", email: "alice@example.com", borrowed_books: [] },
@@ -82,6 +82,29 @@ finally, insert documents into the Patrons collection:
       { _id: 9, name: "Ivy Taylor", email: "ivy@example.com", borrowed_books: [] },
       { _id: 10, name: "Jack Anderson", email: "jack@example.com", borrowed_books: [7, 8] }
     ])
-
+    
+  
   ![insert-patrons](https://github.com/user-attachments/assets/7d544e0d-5ea0-4644-995b-08a62f606210)
 #
+  ### **3. CRUD Operations**
+  * #### **Read Operations**
+    **Find All Books***
+
+        db.Books.find()
+
+    **Find a Specific Book By Title**
+
+        db.Books.find({title:"To Kill a Mockingbird"})
+
+    **Find All Books by a Specific Author (using author_id)
+
+        db.Books.find({ author_id: 5 })
+
+    **Find All Available Books**
+
+        db.Books.find({ available: true })
+    
+  * #### ** Update Operations**
+    **Update Book Availability**
+
+    
