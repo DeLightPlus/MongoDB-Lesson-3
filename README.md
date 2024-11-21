@@ -164,7 +164,7 @@ The **Library Management System** allows managing a collection of books, authors
 
   * **Find All American Authors**
 
-        db.Authors.find({ nationality: "American" })
+        db.Authors.find({ nationality: { $eq: "American" } })
 
     ![find-all-American-Authors](https://github.com/user-attachments/assets/8046f9f6-9176-4df9-ad3c-093b006822dc)
   
